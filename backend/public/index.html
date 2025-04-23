@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dairy Webinar Registration Event</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      header {
+        background: linear-gradient(120deg, #0078d4, #005a9e);
+        color: white;
+        padding: 60px 40px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      .header-content {
+        max-width: 1000px;
+        width: 100%;
+      }
+
+      .tag {
+        display: inline-block;
+        background: white;
+        color: #0078d4;
+        font-weight: bold;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      header h1 {
+        font-size: 32px;
+        margin: 0 0 10px 0;
+        line-height: 1.3;
+      }
+
+      header p {
+        font-size: 16px;
+        margin: 5px 0 0 0;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background-color: white;
+        padding: 40px 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      }
+
+      h2 {
+        color: #0078d4;
+        margin-bottom: 10px;
+      }
+
+      form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      label {
+        font-weight: 600;
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 15px;
+      }
+
+      .required {
+        color: red;
+      }
+
+      .full-width {
+        grid-column: span 2;
+      }
+
+      .btns {
+        grid-column: span 2;
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 15px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .register {
+        background-color: #0078d4;
+        color: white;
+        margin-right: 10px;
+      }
+
+      .cancel {
+        background-color: #ccc;
+      }
+
+      ul {
+        padding-left: 20px;
+        margin-top: 10px;
+      }
+
+      .section {
+        margin-top: 40px;
+      }
+
+      .agenda p {
+        font-weight: 500;
+      }
+
+      .speakers {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .speaker {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .speaker img {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border: 3px solid #0078d4;
+      }
+
+      .speaker-info strong {
+        font-size: 16px;
+        color: #0078d4;
+      }
+
+      @media (max-width: 768px) {
+        form {
+          grid-template-columns: 1fr;
+        }
+        .btns {
+          grid-column: span 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="tag">Digital</div>
+        <h1>
+          Revolutionize Your Dairy Operations with Navfarm & Microsoft Dynamics
+          365
+        </h1>
+        <p><strong>Where:</strong> Online</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <h2>Register Now</h2>
+      <p>
+        <strong>When:</strong> Wednesday, May 08, 2025, 8:00 – 9:00 PM
+        (GMT+05:30)
+      </p>
+      <p><strong>Delivery language(s):</strong> English</p>
+      <p><strong>Closed captioning language(s):</strong> English</p>
+
+      <ul>
+        <li>UAE: 06:30PM – 7:30PM (SGT)</li>
+        <li>Uk: 3:30PM – 4:30PM (BST)</li>
+        <li>Africa: 4:30PM – 5:30PM (SAST)</li>
+        <li>India: 8:00PM – 9:00PM (IST)</li>
+        <li>US: 10:30AM – 11:30AM (EDT)</li>
+      </ul>
+
+      <form id="registrationForm">
+        <div>
+          <label>First Name <span class="required">*</span></label>
+          <input type="text" name="firstName" required />
+        </div>
+        <div style="grid-column: 2">
+          <label>Last Name <span class="required">*</span></label>
+          <input type="text" name="lastName" required />
+        </div>
+        <div>
+          <label>Email Address <span class="required">*</span></label>
+          <input type="email" name="email" required />
+        </div>
+        <div>
+          <label>Phone Number <span class="required">*</span></label>
+          <div style="display: flex; gap: 20px; justify-content: space-between">
+            <input
+              type="text"
+              name="phoneCode"
+              placeholder="Country Code *"
+              required
+            />
+
+            <input type="tel" name="phoneNumber" required />
+          </div>
+        </div>
+        <div>
+          <label>Job Role <span class="required">*</span></label>
+          <input type="text" name="jobRole" required />
+        </div>
+        <div>
+          <label>Company Name <span class="required">*</span></label>
+          <input type="text" name="companyName" required />
+        </div>
+        <div class="full-width">
+          <label>Country <span class="required">*</span></label>
+          <input type="text" name="country" placeholder="Country *" required />
+        </div>
+        <div class="btns">
+          <button class="register" type="submit">Register</button>
+          <button class="cancel" type="button">Cancel</button>
+        </div>
+      </form>
+      <div class="section">
+        <h2>Key Takeaways</h2>
+        <ul>
+          <li>
+            Automate critical processes from order to dispatch and procure to
+            pay .
+          </li>
+          <li>
+            Optimize batch-based production with precise costing and
+            traceability .
+          </li>
+          <li>
+            Gain real-time visibility into inventory, production, and demand .
+          </li>
+          <li>
+            Digitize compliance and approval workflows for seamless regulation
+            management .
+          </li>
+          <li>
+            Maximize ROI with scalable and secure Microsoft cloud solutions .
+          </li>
+        </ul>
+      </div>
+      <div class="section">
+        <h2>Who Should Attend</h2>
+        <ul>
+          <li>CIOs, IT Decision Makers</li>
+          <li>CXOs in the Dairy Industry</li>
+          <li>Plant Heads, Operations Managers</li>
+        </ul>
+      </div>
+
+      <div class="section agenda">
+        <h2>Agenda</h2>
+        <p>
+          <strong>08:00 PM – 09:00 PM (IST):</strong> Revolutionize Your Dairy
+          Operations with Navfarm & Microsoft Dynamics 365
+        </p>
+      </div>
+
+      <div class="section speakers">
+        <h2>Speakers</h2>
+        <div class="speaker">
+          <img
+            src="https://media.licdn.com/dms/image/v2/D5603AQHVSsCXm0ZnUA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1705735908238?e=1750291200&v=beta&t=cM9VL1J_6NbIH1VHilIYnLTdYAO9c8FKa9RQG1KtSsA"
+            alt="Shiv Gaurav"
+          />
+          <div class="speaker-info">
+            <strong>Shiv Gaurav</strong><br />
+            Principal Consultant
+          </div>
+        </div>
+        <div class="speaker">
+          <img
+            src="https://media.licdn.com/dms/image/v2/D4D03AQHWjxSi8CyY3g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1665251744935?e=1750291200&v=beta&t=bFSj74QCGEZYWt6KQMHC0cCBX3KEUw5Ap3w9uv-go6M"
+            alt="Arshad A. Siddiqui"
+          />
+          <div class="speaker-info">
+            <strong>Arshad A. Siddiqui</strong><br />
+            AVP - Client and Partner
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="thankYouMessage" style="display: none">
+      <div
+        class="box"
+        style="
+          text-align: center;
+          padding: 30px;
+          background-color: #e6f4ea;
+          border-radius: 10px;
+          margin-top: 30px;
+        "
+      >
+        <h1>✅ Thank You for Registering!</h1>
+        <p>Your seat is confirmed for the webinar.</p>
+        <p>We’ve sent the joining link to your email.</p>
+        <a
+          href="https://teams.microsoft.com/l/meetup-join/your-link"
+          target="_blank"
+          style="
+            display: inline-block;
+            margin-top: 15px;
+            color: white;
+            background-color: #0078d4;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+          "
+          >Join Seminar</a
+        >
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("registrationForm");
+      const thankYouMessage = document.getElementById("thankYouMessage");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = {
+          firstName: form.firstName.value,
+          lastName: form.lastName.value,
+          email: form.email.value,
+          phoneCode: form.phoneCode.value,
+          phoneNumber: form.phoneNumber.value,
+          jobRole: form.jobRole.value,
+          companyName: form.companyName.value,
+          country: form.country.value,
+        };
+
+        try {
+          const res = await fetch("http://localhost:3001/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          });
+
+          const result = await res.json();
+
+          // Hide the form container and show thank you message
+          document.querySelector(".container").style.display = "none";
+          thankYouMessage.style.display = "block";
+        } catch (err) {
+          console.error(err);
+          alert("Error submitting form");
+        }
+      });
+
+      document.querySelector(".cancel").addEventListener("click", () => {
+        form.reset();
+      });
+    </script>
+
+    <!-- <script>
+  // const form = document.getElementById("registrationForm");
+
+  // form.addEventListener("submit", async (e) => {
+  //   e.preventDefault();
+
+  //   const formData = {
+  //     firstName: form.firstName.value,
+  //     lastName: form.lastName.value,
+  //     email: form.email.value,
+  //     phoneCode: form.phoneCode.value,
+  //     phoneNumber: form.phoneNumber.value,
+  //     jobRole: form.jobRole.value,
+  //     companyName: form.companyName.value,
+  //     country: form.country.value,
+  //   };
+
+  //   try {
+  //     const res = await fetch("http://localhost:3000/register", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     const result = await res.json();
+  //     alert(result.message || "Registration successful!");
+  //     form.reset();
+  //   } catch (err) {
+  //     console.error(err);
+  //     alert("Error submitting form");
+  //   }
+  // });
+
+  // document.querySelector(".cancel").addEventListener("click", () => {
+  //   form.reset();
+  // });
+
+  const thankYouMessage = document.getElementById("thankYouMessage");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    firstName: form.firstName.value,
+    lastName: form.lastName.value,
+    email: form.email.value,
+    phoneCode: form.phoneCode.value,
+    phoneNumber: form.phoneNumber.value,
+    jobRole: form.jobRole.value,
+    companyName: form.companyName.value,
+    country: form.country.value,
+  };
+
+  try {
+    const res = await fetch("http://localhost:3000/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await res.json();
+
+    // Hide form and show thank you message
+    // form.style.display = "none";
+    thankYouMessage.style.display = "block";
+  } catch (err) {
+    console.error(err);
+    alert("Error submitting form");
+  }
+});
+
+</script> -->
+  </body>
+</html>
