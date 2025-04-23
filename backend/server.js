@@ -89,7 +89,7 @@ app.post("/register", async (req, res) => {
     res.status(200).json({ redirect: "/thankyou" });
   } catch (error) {
     console.error("❌ Registration failed:", error);
-    res.status(500).json({ error: error || "Registration failed" });
+    res.status(500).json({ error: error || "Registration failed why ?" });
   }
 });
 
