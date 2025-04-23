@@ -6,7 +6,7 @@ const nodemailer = require("nodemailer");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 // Middleware
 app.use(cors());
@@ -47,7 +47,9 @@ app.post("/register", async (req, res) => {
       valueInputOption: "RAW",
       insertDataOption: "INSERT_ROWS",
       resource: {
-        values: [[firstName, lastName, email, phone, jobRole, companyName, country]],
+        values: [
+          [firstName, lastName, email, phone, jobRole, companyName, country],
+        ],
       },
     });
 
@@ -55,13 +57,13 @@ app.post("/register", async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "manish610kumar@gmail.com",         // ✅ Your Gmail
-        pass: "huom nmfa jgmg hepv",      // ✅ Your App Password from Google
+        user: "manish610kumar@gmail.com", // ✅ Your Gmail
+        pass: "huom nmfa jgmg hepv", // ✅ Your App Password from Google
       },
     });
 
     const mailOptions = {
-      from: '"Dairy Webinar" <manish.sharma@prudencesoftech.com>',  // ✅ Must match the auth user
+      from: '"Dairy Webinar" <manish.sharma@prudencesoftech.com>', // ✅ Must match the auth user
       to: email,
       subject: "Webinar Registration Confirmation",
       html: `
@@ -80,7 +82,6 @@ app.post("/register", async (req, res) => {
 
     // 3. Tell frontend to redirect
     res.status(200).json({ redirect: "/thankyou" });
-
   } catch (error) {
     console.error("❌ Registration failed:", error);
     res.status(500).json({ error: "Registration failed" });
@@ -90,6 +91,12 @@ app.post("/register", async (req, res) => {
 // Route for thankyou.html
 app.get("/thankyou", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "thankyou.html"));
+});
+app.get("/arun", (req, res) => {
+  // res.sendFile(path.join(__dirname, "public", "thankyou.html"));
+  res.json({
+    name: "Arun pratap singh",
+  });
 });
 
 // Start server
