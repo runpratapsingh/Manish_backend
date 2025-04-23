@@ -15,7 +15,8 @@ app.use(express.static("public")); // Serve static files like thankyou.html
 
 // Google Sheets Auth
 const auth = new google.auth.GoogleAuth({
-  keyFile: "credentials.json",
+  // keyFile: "credentials.json",
+  credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 
