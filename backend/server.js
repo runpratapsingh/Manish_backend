@@ -21,6 +21,11 @@ const auth = new google.auth.GoogleAuth({
 
 const SPREADSHEET_ID = "1o4hoqm7UCDwB4oEUPYPf4KJk69V6LozRb_SoOfHfP0I"; // Your Google Sheet ID
 
+// Route for homepage
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
 // POST /register route
 app.post("/register", async (req, res) => {
   const {
